@@ -1,1 +1,1 @@
-https://manimogo.github.io/mhtest/
+https://manimogo.github.io/memoryhost_1/
