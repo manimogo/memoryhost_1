@@ -1,0 +1,167 @@
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #0f0;
+  font-family: SourceCodePro;
+  font-size: 1rem;
+  padding: 1rem;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.quote {
+  animation: fadeIn 1.5s ease-out, flicker 2s infinite 1.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.3;
+  }
+}
+
+.terminal {
+  max-width: 100%;
+  width: 100%;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.line {
+  margin-bottom: 0.1rem;
+}
+
+.footer {
+  margin-bottom: 0.1rem;
+}
+
+.prompt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.prompt-text {
+  flex-shrink: 0;
+}
+
+.countdown-text {
+  color: #0f0;
+  font-weight: bold;
+}
+
+.blinker::after {
+  content: '_';
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+a {
+  color: #0f0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+#alert-line {
+  color: red;
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .terminal {
+    padding: 0.5rem;
+  }
+
+  .prompt {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+.webplayer {
+  margin-top: 1rem;
+  background-color: #000;
+  color: #0f0;
+  padding: 1rem;
+  border: 1px dashed #0f0;
+  animation: glitchIn .8s ease-out;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes glitchIn {
+  0% { transform: scale(0.95) rotateX(90deg); opacity: 0; }
+  100% { transform: scale(1) rotateX(0deg); opacity: 1; }
+}
+
+.webplayer a {
+  color: #0f0;
+  text-decoration: none;
+}
+
+.webplayer a:hover {
+  text-decoration: underline;
+}
+
+/* Tighter spacing for webplayer tracks */
+.webplayer .line {
+  margin-bottom: 0.2rem; /* tighter than the global 0.5rem */
+  line-height: 0.2;
+}
+
+/* Optional: tighten the audio player itself */
+#player {
+  margin-top: 0.1rem;
+}
+
+/* field notes page */
+.dos-input {
+  background-color: #000;
+  border: 1px solid #0f0;
+  color: #0f0;
+  font-family: 'SourceCodePro', monospace;
+  padding: 0.2rem;
+}
+
+.hidden {
+  display: none;
+}
