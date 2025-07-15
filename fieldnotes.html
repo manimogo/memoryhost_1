@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>memory host - field notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="terminal">
+    <div class="line prompt">
+      <span class="prompt-text">C:\FIELD_NOTES_ACCESS</span>
+    </div>
+
+    <div class="line">Enter access key:</div>
+    <div class="line">
+      <input id="passwordInput" type="password" class="dos-input" />
+      <button onclick="checkPassword()">[submit]</button>
+    </div>
+
+    <div id="protectedContent" class="hidden">
+    :: archive unlocked ::
+      
+    -- recovered entry 056
+    -- recovered entry 057
+    -- recovered entry 058
+    -- recovered entry 084
+    -- wips folder
+    -- assets folder
+      <!-- add more archive content here -->
+    </div>
+
+    <div id="errorMessage" class="line hidden" style="color: red;">
+      access denied. try again.
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value;
+      const correct = "cellhp"; // 🔒 change this password
+      const content = document.getElementById('protectedContent');
+      const error = document.getElementById('errorMessage');
+
+      if (input === correct) {
+        content.classList.remove('hidden');
+        error.classList.add('hidden');
+      } else {
+        error.classList.remove('hidden');
+        content.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

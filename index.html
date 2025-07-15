@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>memory host</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+  <div class="terminal">
+    <!-- Prompt and countdown -->
+    <div class="line prompt">
+      <span class="prompt-text">C:\MEMORY HOST</span>
+      <span class="countdown-text">//  <span id="countdown">00:00:00</span></span>
+    </div>
+
+    <!-- Navigation -->
+    <div class="line">Click to navigate.</div>
+:: Link  Directory :: 
+  <a href="#" id="demos-link">[demos]</a>&nbsp;&nbsp;
+  <a href="fieldnotes.html">[field notes]</a>
+  <a href="https://www.instagram.com/memory_host/" target="_blank" rel="noopener noreferrer">[contact]</a>
+  
+
+    <!-- Hidden demos webplayer -->
+    <div id="webplayer" class="webplayer hidden"><audio id="player" controls style="margin-top: .2rem;"></audio>
+      <div class="line">:: playback utility ::</div>
+      <a href="#" onclick="playTrack(event, 'ID_01.mp3')">ID_01.mp3</a>
+      <a href="#" onclick="playTrack(event, 'ID_02.mp3')">ID_02.mp3</a>
+      <a href="#" onclick="playTrack(event, 'ID_03.mp3')">ID_03.mp3</a>
+</div>
+
+    <!-- Terminal footer -->
+    <div class="footer">
+    //  history is corrupted
+    //  recall comes in fragments
+    //  Memory Host is a protected container <span class="blinker"></span>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+  // Countdown timer setup
+  const targetDate = new Date("July 20, 2025 18:00:00");
+  const countdownEl = document.getElementById("countdown");
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = Math.max(0, Math.floor((targetDate - now) / 1000));
+    const hours = String(Math.floor(diff / 3600)).padStart(2, '0');
+    const minutes = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+    const seconds = String(diff % 60).padStart(2, '0');
+    countdownEl.textContent = `${hours}:${minutes}:${seconds}`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Toggle web player visibility on [demos] click
+  document.getElementById('demos-link').addEventListener('click', function (e) {
+    e.preventDefault();
+    const player = document.getElementById('webplayer');
+    player.classList.toggle('hidden');
+  });
+
+  // Play audio tracks from /audio/ directory
+  function playTrack(event, filename) {
+  event.preventDefault(); // stops page jump to top
+  const audio = document.getElementById('player');
+  audio.src = 'audio/' + filename;
+  audio.play();
+}
+</script>
+    
+    
+
+</body>
+</html>
