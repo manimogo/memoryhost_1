@@ -5,6 +5,14 @@
   font-style: normal;
 }
 
+/* Fall back to japense compat if font fails*/
+.terminal, .line, .terminal-output {
+  font-family: 'SourceCodePro', 'Noto Sans JP', 'Meiryo', monospace;
+}
+
+/*#0f0 is the green color code */
+
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +21,7 @@
 
 body {
   background-color: #000;
-  color: #0f0;
+  color: #40c3ff;
   font-family: SourceCodePro;
   font-size: 1rem;
   padding: 1rem;
@@ -71,7 +79,7 @@ body {
 }
 
 .countdown-text {
-  color: #0f0;
+  color: #40c3ff;
   font-weight: bold;
 }
 
@@ -85,7 +93,7 @@ body {
   50% { opacity: 0; }
 }
 a {
-  color: #0f0;
+  color: #40c3ff;
   text-decoration: none;
 }
 
@@ -118,9 +126,9 @@ a:hover {
 .webplayer {
   margin-top: 1rem;
   background-color: #000;
-  color: #0f0;
+  color: #40c3ff;
   padding: 1rem;
-  border: 1px dashed #0f0;
+  border: 1px dashed #40c3ff;
   animation: glitchIn .8s ease-out;
 }
 
@@ -134,7 +142,7 @@ a:hover {
 }
 
 .webplayer a {
-  color: #0f0;
+  color: #40c3ff;
   text-decoration: none;
 }
 
@@ -156,8 +164,8 @@ a:hover {
 /* field notes page */
 .dos-input {
   background-color: #000;
-  border: 1px solid #0f0;
-  color: #0f0;
+  border: 1px solid #40c3ff;
+  color: #40c3ff;
   font-family: 'SourceCodePro', monospace;
   padding: 0.2rem;
 }
@@ -165,3 +173,61 @@ a:hover {
 .hidden {
   display: none;
 }
+
+.dos-button {
+  background-color: #000;
+  color: #40c3ff;
+  border: 1px solid #40c3ff;
+  font-family: 'SourceCodePro', monospace;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.dos-button:hover {
+  background-color: #40c3ff;
+  color: #000;
+}
+
+.dos-button {
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.6; }
+  50% { opacity: 0.9; }
+  55% { opacity: 0.5; }
+  60% { opacity: 1; }
+}
+
+/* keyword terminal*/
+
+.wide {
+  width: 100%;
+  max-width: 600px;
+  margin: 0.5rem 0;
+}
+
+.terminal-output {
+  background-color: #000;
+  color: #40c3ff;
+  border: 1px solid #40c3ff;
+  padding: 1rem;
+  margin-top: 1rem;
+  min-height: 150px;
+  font-family: monospace;
+  font-size: 0.3rem; /* Smaller text */
+  white-space: pre-wrap;
+  line-height: 1.2;
+}
+
+.terminal .line {
+  font-size: 0.85rem; /* Adjust line height in terminal */
+}
+
+.line pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
