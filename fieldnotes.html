@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="terminal">
+
+<div class="terminal">
+    <div class="line"><a href="index_endpoint.html" class="dos-link">&lt;&lt;&lt; return</a></div>
+  
     <div class="line prompt">
       <span class="prompt-text">C:\FIELD_NOTES_ACCESS</span>
     </div>
@@ -15,8 +18,10 @@
     <div class="line">Enter access key:</div>
     <div class="line">
       <input id="passwordInput" type="password" class="dos-input" />
-      <button onclick="checkPassword()">[submit]</button>
+     <button class="dos-button" onclick="checkPassword()">[submit]</button>
     </div>
+    
+    
 
     <div id="protectedContent" class="hidden">
     :: archive unlocked ::
