@@ -11,14 +11,16 @@
 }
 
 /* image class*/
+
+
 .terminal-image {
   max-width: 100%;
   height: auto;
-  margin-top: 0.5rem;
+  display: block;
+  margin-top: 1rem;
   border: 1px solid #40c3ff;
-  padding: 2px;
-  background-color: #000;
 }
+
 
 /*#0f0 is the green color code */
 
@@ -62,12 +64,13 @@ body {
 }
 
 .terminal {
-  max-width: 100%;
+  max-width: 800px;
   width: 100%;
   white-space: pre-wrap;
   line-height: 1.4;
   word-break: break-word;
 }
+
 
 .line {
   margin-bottom: 0.1rem;
