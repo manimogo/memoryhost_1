@@ -70,10 +70,23 @@ body {
   line-height: 1.4;
   word-break: break-word;
 }
+.terminalright {
+  max-width: 800px;
+  width: 100%;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  word-break: break-word;
+  border: 1px solid #40c3ff;
+}
+
 
 
 .line {
   margin-bottom: 0.1rem;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .footer {
